@@ -1,0 +1,33 @@
+.item {
+	width: 100%;
+	min-height: 120px;
+	margin: 10px 0;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	background-color: white;
+	box-shadow: 0 0 8px rgba(0, 0, 0, 0.144);
+	border-radius: 10px;
+	cursor: pointer;
+}
+.item__image {
+	width: clamp(50px, 100%, 100px);
+	border-radius: 50%;
+}
+.item__details {
+	text-align: start;
+	min-width: 40%;
+}
+.details--name {
+	font-size: 1.7rem;
+	font-weight: bold;
+}
+.details--job {
+	font-size: 1.2rem;
+	opacity: 0.7;
+	margin: 5px 0;
+}
+.twitter {
+	text-decoration: none;
+	color: var(--twitter-color);
+}

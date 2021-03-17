@@ -1,0 +1,32 @@
+.list {
+	width: 500px;
+	background-color: var(--main-color);
+	min-height: 100vh;
+	text-align: center;
+	padding: 20px;
+}
+
+.list--title {
+	margin-bottom: 10px;
+	font-weight: bold;
+	font-size: 2rem;
+}
+
+.list__container {
+	padding: 5px 10px;
+	width: 90%;
+	margin: 0 auto;
+	height: 880px;
+	overflow-y: scroll;
+}
+.list__container::-webkit-scrollbar {
+	width: 5px;
+}
+.list__container::-webkit-scrollbar-thumb {
+	border-radius: 15px;
+	background-color: rgba(0, 0, 0, 0.438);
+}
+.list__container::-webkit-scrollbar-thumb:hover {
+	border-radius: 15px;
+	background-color: rgba(0, 0, 0, 0.658);
+}
