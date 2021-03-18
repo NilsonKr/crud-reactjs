@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
 
 :root {
-	--main-color: rgb(196, 224, 233);
+	--main-color: rgb(226, 226, 226);
 	--twitter-color: rgb(106, 168, 248);
 }
 
@@ -16,4 +16,21 @@
 body {
 	font-family: 'Lato', 'Helvetica Neue', sans-serif;
 	background-color: #f4f4f7;
+}
+
+.btn {
+	cursor: pointer;
+	background-color: none;
+	border: none;
+}
+
+.btn-primary {
+	text-align: center;
+	padding: 15px;
+	min-width: 200px;
+	font-size: 2rem;
+	background: rgb(45, 219, 45);
+	color: white;
+	font-weight: bold;
+	border-radius: 30px;
 }

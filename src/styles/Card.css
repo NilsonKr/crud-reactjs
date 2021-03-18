@@ -1,0 +1,35 @@
+.card {
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	justify-content: space-around;
+	padding: 10px 0;
+	box-shadow: -5px -5px 8px rgba(0, 0, 0, 0.295);
+	border-radius: 10px;
+	background: #fff;
+	width: 350px;
+	height: 350px;
+}
+.card--details {
+	display: flex;
+	text-align: start;
+	padding: 10px 0;
+	justify-content: center;
+	align-items: center;
+}
+.card--details img {
+	margin-right: 10px;
+	width: 120px;
+	border-radius: 50%;
+}
+.card--details h2 {
+	font-size: 2.3rem;
+	font-weight: bold;
+}
+.card-jobtitle {
+	text-align: center;
+	width: 100%;
+	font-size: 1.5rem;
+	padding: 10px 0;
+	background: var(--main-color);
+}

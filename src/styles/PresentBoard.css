@@ -1,0 +1,15 @@
+.presentboard {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: url('../images/biology.png') center / 200px no-repeat;
+	background-color: var(--main-color);
+	opacity: 1;
+}
+
+.presentBoard__container {
+	padding: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}

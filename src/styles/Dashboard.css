@@ -1,0 +1,6 @@
+.dashboard__container {
+	min-height: 100vh;
+	display: grid;
+	grid-template-columns: minmax(200px, 500px) 1fr;
+	gap: 10px;
+}
