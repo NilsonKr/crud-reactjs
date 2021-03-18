@@ -11,15 +11,20 @@
 	cursor: pointer;
 }
 .item__image {
-	width: clamp(50px, 100%, 100px);
+	width: 30%;
+}
+
+.item__image img {
+	width: 100px;
 	border-radius: 50%;
 }
 .item__details {
 	text-align: start;
-	min-width: 40%;
+	width: 50%;
+	padding: 10px;
 }
 .details--name {
-	font-size: 1.7rem;
+	font-size: 1.5rem;
 	font-weight: bold;
 }
 .details--job {
@@ -28,6 +33,7 @@
 	margin: 5px 0;
 }
 .twitter {
+	font-size: 0.9rem;
 	text-decoration: none;
 	color: var(--twitter-color);
 }
