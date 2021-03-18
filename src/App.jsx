@@ -3,6 +3,7 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom';
 
 import Layout from './components/Layout';
 import Dashboard from './pages/Dashboard';
+import Create from './pages/Create';
 
 const App = () => {
 	return (
@@ -10,7 +11,7 @@ const App = () => {
 			<Switch>
 				<Layout>
 					<Route exact path='/' component={Dashboard} />
-					<Route exact path='/hola' component={Dashboard} />
+					<Route exact path='/createBadge' component={Create} />
 				</Layout>
 			</Switch>
 		</BrowserRouter>

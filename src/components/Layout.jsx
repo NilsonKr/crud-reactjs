@@ -1,7 +1,44 @@
-import React from 'react';
+import React, {Component} from 'react';
+import List from '../components/List';
+import api from '../api';
 
-const Layout = ({children}) => {
-	return <div className='dashboard__container'>{children}</div>;
-};
+class Layout extends Component {
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			loading: true,
+			error: null,
+			data: undefined,
+		};
+	}
+
+	componentDidMount() {
+		this.fetchData();
+	}
+
+	fetchData = async () => {
+		this.setState({loading: true, error: null});
+
+		try {
+			const data = await api.badges.list();
+			this.setState({loading: false, data});
+		} catch (error) {
+			this.setState({loading: false, error});
+		}
+	};
+
+	render() {
+		if (this.props.location.pathname === '/home') {
+			return <div>{this.props.children}</div>;
+		}
+		return (
+			<div className='dashboard__container'>
+				<List data={this.state.data} loading={this.state.loading} />
+				{this.props.children}
+			</div>
+		);
+	}
+}
 
 export default Layout;
