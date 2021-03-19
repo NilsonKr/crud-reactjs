@@ -9,12 +9,14 @@ class Layout extends Component {
 		this.state = {
 			loading: true,
 			error: null,
-			data: undefined,
+			data: [],
 		};
 	}
 
 	componentDidMount() {
 		this.fetchData();
+
+		this.polling = setInterval(() => this.fetchData(), 5000);
 	}
 
 	fetchData = async () => {

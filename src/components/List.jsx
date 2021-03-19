@@ -6,13 +6,6 @@ import loader from '../images/loader.svg';
 import '../styles/List.css';
 
 function List(props) {
-	if (props.loading) {
-		return (
-			<div className='list'>
-				<img src={loader} alt='Loader' />
-			</div>
-		);
-	}
 	if (!props.data) {
 		return <h2>Oh OH Something Came Out Wrong!❌😨</h2>;
 	}
@@ -23,6 +16,7 @@ function List(props) {
 				{props.data.map(badge => {
 					return <Item key={badge.id} data={badge} />;
 				})}
+				{props.loading && <img src={loader} alt='Loader' />}
 			</div>
 		</div>
 	);

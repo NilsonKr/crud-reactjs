@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import api from '../api';
+import md5 from 'md5';
 
 import PresentBoard from '../components/PresentBoard';
 import Card from '../components/Card';
@@ -38,7 +39,18 @@ class Create extends Component {
 
 	handleSubmit = async ev => {
 		ev.preventDefault();
-		this.setState({loading: true, error: null});
+		const avatarurl = `https://www.gravatar.com/avatar/${md5(
+			this.state.form.email
+		)}?d=identicon`;
+
+		await this.setState({
+			loading: true,
+			error: null,
+			form: {
+				...this.state.form,
+				avatarUrl: avatarurl,
+			},
+		});
 
 		try {
 			await api.badges.create(this.state.form);
@@ -77,6 +89,7 @@ class Create extends Component {
 					<Card
 						firstName={this.state.form.firstName || 'First_Name'}
 						lastName={this.state.form.lastName || 'Last_Name'}
+						email={this.state.form.email || ' '}
 						jobTitle={this.state.form.jobTitle || 'Job_Title'}
 						twitter={this.state.form.twitter || 'twitter'}
 					/>

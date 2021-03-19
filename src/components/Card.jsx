@@ -1,12 +1,14 @@
 import React from 'react';
-import img from '../images/astronauts.svg';
+
+import Gravatar from './Gravatar';
+
 import '../styles/Card.css';
 
 const Card = props => {
 	return (
 		<div className='card'>
 			<div className='card--details'>
-				<img src={img} alt='Gravatar' />
+				<Gravatar email={props.email}></Gravatar>
 				<h2>
 					{props.firstName}
 					<br />
