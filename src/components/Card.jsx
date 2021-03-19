@@ -8,15 +8,15 @@ const Card = props => {
 			<div className='card--details'>
 				<img src={img} alt='Gravatar' />
 				<h2>
-					{props.values.firstName}
+					{props.firstName}
 					<br />
-					{props.values.lastName}
+					{props.lastName}
 				</h2>
 			</div>
 			<div className='card-jobtitle'>
-				<h2>{props.values.jobtitle}</h2>
+				<h2>{props.jobTitle}</h2>
 			</div>
-			<p className='twitter'>@{props.values.twitter}</p>
+			<p className='twitter'>@{props.twitter}</p>
 		</div>
 	);
 };
