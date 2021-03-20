@@ -48,3 +48,9 @@ body {
 	font-weight: bold;
 	border-radius: 30px;
 }
+
+.modal-btn {
+	padding: 8px;
+	font-size: 1.7rem;
+	margin: 5px 0;
+}

@@ -6,6 +6,7 @@ import md5 from 'md5';
 import PresentBoard from '../components/PresentBoard';
 import Card from '../components/Card';
 import Form from '../components/Form';
+import Modal from '../components/Modal';
 
 import '../styles/Edit.css';
 import loader from '../images/loader.svg';
@@ -17,6 +18,7 @@ class Edit extends Component {
 		this.id = props.match.params.badgeId;
 
 		this.state = {
+			isModalOpen: false,
 			loading: true,
 			error: null,
 			data: {
@@ -40,6 +42,25 @@ class Edit extends Component {
 			this.updateBadge();
 		}
 	}
+
+	toggleModal = ev => {
+		const toggle = this.state.isModalOpen ? false : true;
+
+		this.setState({isModalOpen: toggle});
+	};
+
+	deleteBadge = async ev => {
+		this.setState({loading: true, error: null});
+
+		try {
+			await api.badges.remove(this.id);
+			this.props.history.push('/');
+
+			this.setState({loading: false});
+		} catch (error) {
+			this.setState({loading: false, error});
+		}
+	};
 
 	updateBadge = async () => {
 		this.setState({loading: true, error: null});
@@ -118,7 +139,23 @@ class Edit extends Component {
 						/>
 					</div>
 					<div className='edit__buttons'>
-						<button className='btn btn-dangerous'>Delete</button>
+						<button onClick={this.toggleModal} className='btn btn-dangerous'>
+							Delete
+						</button>
+						{this.state.isModalOpen && (
+							<Modal close={this.toggleModal}>
+								<h2>You are about to Delete This Badge , Are you Sure?</h2>
+								<button onClick={this.toggleModal} className='btn btn-primary modal-btn'>
+									Cancel
+								</button>
+								<button
+									onClick={this.deleteBadge}
+									className='btn btn-dangerous modal-btn'
+								>
+									Delete
+								</button>
+							</Modal>
+						)}
 					</div>
 				</div>
 			</PresentBoard>
