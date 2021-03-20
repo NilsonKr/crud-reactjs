@@ -3,6 +3,8 @@
 :root {
 	--main-color: rgb(226, 226, 226);
 	--twitter-color: rgb(106, 168, 248);
+	--primary-btn: rgb(45, 219, 45);
+	--danger-btn: rgb(250, 71, 71);
 }
 
 * {
@@ -22,6 +24,7 @@ body {
 	cursor: pointer;
 	background-color: none;
 	border: none;
+	text-decoration: none;
 }
 
 .btn-primary {
@@ -29,7 +32,18 @@ body {
 	padding: 15px;
 	min-width: 200px;
 	font-size: 2rem;
-	background: rgb(45, 219, 45);
+	background: var(--primary-btn);
+	color: white;
+	font-weight: bold;
+	border-radius: 30px;
+}
+
+.btn-dangerous {
+	text-align: center;
+	padding: 15px;
+	min-width: 200px;
+	font-size: 2rem;
+	background: var(--danger-btn);
 	color: white;
 	font-weight: bold;
 	border-radius: 30px;

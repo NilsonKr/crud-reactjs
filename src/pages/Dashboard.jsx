@@ -10,7 +10,7 @@ class Dashboard extends Component {
 		return (
 			<React.Fragment>
 				<PresentBoard>
-					<Link to='/createBadge' className='create-btn btn btn-primary'>
+					<Link to='/createBadge' className='back-btn btn btn-primary'>
 						Create New Badge
 					</Link>
 				</PresentBoard>

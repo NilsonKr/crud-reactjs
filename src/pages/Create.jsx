@@ -83,7 +83,7 @@ class Create extends Component {
 		return (
 			<React.Fragment>
 				<PresentBoard>
-					<Link to='/' className='create-btn btn btn-primary'>
+					<Link to='/' className='back-btn btn btn-primary'>
 						Back To DashBoard
 					</Link>
 					<Card

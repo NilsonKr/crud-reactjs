@@ -9,6 +9,8 @@
 	box-shadow: 0 0 8px rgba(0, 0, 0, 0.144);
 	border-radius: 10px;
 	cursor: pointer;
+	text-decoration: none;
+	color: black;
 }
 .item__image {
 	width: 30%;

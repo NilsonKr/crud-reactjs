@@ -50,7 +50,7 @@ const Form = props => {
 					value={props.values.twitter}
 				/>
 			</div>
-			<button className='  btn btn-primary '>Send</button>
+			<button className='  btn btn-primary '>{props.buttonTxt || 'Send'}</button>
 		</form>
 	);
 };

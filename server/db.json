@@ -442,20 +442,22 @@
       "id": "npaYZKI"
     },
     {
-      "firstName": "Mina",
+      "firstName": "Minari",
       "lastName": "Miyou",
       "email": "minajyp@gmail.com",
-      "jobTitle": " Dancer & Singer",
+      "jobTitle": "Twice Member",
       "twitter": "minatw",
-      "id": "ei0lXXa"
+      "id": "ei0lXXa",
+      "avatarUrl": "https://www.gravatar.com/avatar/c641a5a307bcbacbcfb700860bd2f6df?d=identicon"
     },
     {
-      "firstName": "Nilson",
-      "lastName": "Diaz",
-      "email": "nuotrok444@gmail.com",
-      "jobTitle": "Front-End ",
+      "firstName": "Felipe",
+      "lastName": "Perez",
+      "email": "nuotrok23223@gmail.com",
+      "jobTitle": "Front-End ReactJs ",
       "twitter": "nilsonkr",
-      "id": "3V2Q-HP"
+      "id": "3V2Q-HP",
+      "avatarUrl": "https://www.gravatar.com/avatar/92b62c5b21988493319e52c7a3776799?d=identicon"
     },
     {
       "avatarUrl": "https://www.gravatar.com/avatar/66347041623742d4f5b27035d97dff42?d=identicon",
@@ -463,7 +465,7 @@
     },
     {
       "firstName": "Nilson",
-      "lastName": "Diaz",
+      "lastName": "Diaz ",
       "email": "nuotrok444@gmail.com",
       "jobTitle": "Frontend Engineer",
       "twitter": "Nilson_Kr",

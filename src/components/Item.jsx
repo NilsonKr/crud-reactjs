@@ -1,11 +1,11 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
-import img from '../images/astronauts.svg';
 import '../styles/Item.css';
 
 const Item = props => {
 	return (
-		<div className='item'>
+		<Link to={`/edit/${props.data.id}`} className='item'>
 			<div className='item__image'>
 				<img src={props.data.avatarUrl} alt='Gravatar' />
 			</div>
@@ -14,11 +14,9 @@ const Item = props => {
 					{props.data.firstName} {props.data.lastName}
 				</h2>
 				<p className='details--job'>{props.data.jobTitle}</p>
-				<a href='/' className='twitter'>
-					@{props.data.twitter}
-				</a>
+				<p className='twitter'>@{props.data.twitter}</p>
 			</div>
-		</div>
+		</Link>
 	);
 };
 

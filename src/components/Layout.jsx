@@ -19,6 +19,10 @@ class Layout extends Component {
 		this.polling = setInterval(() => this.fetchData(), 5000);
 	}
 
+	componentWillUnmount() {
+		clearInterval(this.polling);
+	}
+
 	fetchData = async () => {
 		this.setState({loading: true, error: null});
 
