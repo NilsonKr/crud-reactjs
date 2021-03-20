@@ -28,7 +28,7 @@ class Layout extends Component {
 
 		try {
 			const data = await api.badges.list();
-			this.setState({loading: false, data});
+			this.setState({loading: false, data: data.reverse()});
 		} catch (error) {
 			this.setState({loading: false, error});
 		}
