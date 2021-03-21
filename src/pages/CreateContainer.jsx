@@ -1,15 +1,13 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
 import api from '../api';
 import md5 from 'md5';
 
+import Create from './containers/Create';
 import PresentBoard from '../components/PresentBoard';
-import Card from '../components/Card';
-import Form from '../components/Form';
 
 import loader from '../images/loader.svg';
 
-class Create extends Component {
+class CreateContainer extends Component {
 	constructor(props) {
 		super(props);
 
@@ -72,36 +70,15 @@ class Create extends Component {
 	};
 
 	render() {
-		if (this.state.loading) {
-			return (
-				<PresentBoard>
-					<img src={loader} alt='Loader' />
-				</PresentBoard>
-			);
-		}
-
 		return (
-			<React.Fragment>
-				<PresentBoard>
-					<Link to='/' className='back-btn btn btn-primary'>
-						Back To DashBoard
-					</Link>
-					<Card
-						firstName={this.state.form.firstName || 'First_Name'}
-						lastName={this.state.form.lastName || 'Last_Name'}
-						email={this.state.form.email || ' '}
-						jobTitle={this.state.form.jobTitle || 'Job_Title'}
-						twitter={this.state.form.twitter || 'twitter'}
-					/>
-					<Form
-						onChange={this.handleChange}
-						onSubmit={this.handleSubmit}
-						values={this.state.form}
-					/>
-				</PresentBoard>
-			</React.Fragment>
+			<Create
+				form={this.state.form}
+				handleChange={this.handleChange}
+				handleSubmit={this.handleSubmit}
+				loading={this.state.loading}
+			/>
 		);
 	}
 }
 
-export default Create;
+export default CreateContainer;

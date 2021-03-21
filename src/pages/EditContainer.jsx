@@ -1,17 +1,12 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
 import api from '../api';
 import md5 from 'md5';
 
-import PresentBoard from '../components/PresentBoard';
-import Card from '../components/Card';
-import Form from '../components/Form';
-import Modal from '../components/Modal';
+import Edit from './containers/Edit';
 
 import '../styles/Edit.css';
-import loader from '../images/loader.svg';
 
-class Edit extends Component {
+class EditContainer extends Component {
 	constructor(props) {
 		super(props);
 
@@ -106,61 +101,18 @@ class Edit extends Component {
 	};
 
 	render() {
-		if (this.state.loading) {
-			return (
-				<PresentBoard>
-					<Link to='/' className='back-btn btn btn-primary'>
-						Back To DashBoard
-					</Link>
-					<img src={loader} alt='Loader' />
-				</PresentBoard>
-			);
-		}
-
 		return (
-			<PresentBoard>
-				<Link to='/' className='back-btn btn btn-primary'>
-					Back To DashBoard
-				</Link>
-				<div className='edit__container'>
-					<div className='presentBoard__container '>
-						<Card
-							firstName={this.state.data.firstName || 'First_Name'}
-							lastName={this.state.data.lastName || 'Last_Name'}
-							email={this.state.data.email || ' '}
-							jobTitle={this.state.data.jobTitle || 'Job_Title'}
-							twitter={this.state.data.twitter || 'twitter'}
-						/>
-						<Form
-							onChange={this.handleChange}
-							onSubmit={this.handleSubmit}
-							values={this.state.data}
-							buttonTxt='Update'
-						/>
-					</div>
-					<div className='edit__buttons'>
-						<button onClick={this.toggleModal} className='btn btn-dangerous'>
-							Delete
-						</button>
-						{this.state.isModalOpen && (
-							<Modal close={this.toggleModal}>
-								<h2>You are about to Delete This Badge , Are you Sure?</h2>
-								<button onClick={this.toggleModal} className='btn btn-primary modal-btn'>
-									Cancel
-								</button>
-								<button
-									onClick={this.deleteBadge}
-									className='btn btn-dangerous modal-btn'
-								>
-									Delete
-								</button>
-							</Modal>
-						)}
-					</div>
-				</div>
-			</PresentBoard>
+			<Edit
+				loading={this.state.loading}
+				data={this.state.data}
+				handleChange={this.handleChange}
+				handleSubmit={this.handleSubmit}
+				isModalOpen={this.state.isModalOpen}
+				toggleModal={this.toggleModal}
+				deleteBadge={this.deleteBadge}
+			/>
 		);
 	}
 }
 
-export default Edit;
+export default EditContainer;
