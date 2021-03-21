@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import List from '../components/List';
 import api from '../api';
 
+import '../styles/List.css';
+
 class Layout extends Component {
 	constructor(props) {
 		super(props);

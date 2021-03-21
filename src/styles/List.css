@@ -4,11 +4,17 @@
 	text-align: center;
 	padding: 20px;
 }
+.list--searchBar {
+	padding: 10px;
+	font-size: 1.5rem;
+	color: rgba(0, 0, 0, 0.404);
+	border-radius: 20px;
+	outline: none;
+	border: none;
+}
 
-.list--title {
-	margin-bottom: 10px;
-	font-weight: bold;
-	font-size: 2rem;
+.list--searchBar:focus {
+	box-shadow: 0 0 3px 1px var(--primary-btn);
 }
 
 .list__container {

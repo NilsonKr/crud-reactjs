@@ -3,9 +3,6 @@ import api from '../api';
 import md5 from 'md5';
 
 import Create from './containers/Create';
-import PresentBoard from '../components/PresentBoard';
-
-import loader from '../images/loader.svg';
 
 class CreateContainer extends Component {
 	constructor(props) {
